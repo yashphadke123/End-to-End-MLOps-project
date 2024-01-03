@@ -1,0 +1,53 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Student Exam Performance Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>House Price Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">SquareFeet</label>
+            <input class="form-control" type="number" name="square_feet"
+                placeholder="Enter your Area in SquareFeet" min='0' max='3500' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Bedrooms</label>
+            <input class="form-control" type="number" name="bedrooms"
+                placeholder="Enter the number of bedrooms in your house" min='0' max='7'/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Bathrooms</label>
+            <input class="form-control" type="number" name="bathrooms"
+                placeholder="Enter the number of bathrooms in your house" min='0' max='7'/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Neighborhood</label>
+            <select class="form-control" name="neighborhood" placeholder="Enter your Neighborhood" required>
+                <option class="placeholder" selected disabled value="">Select your Neighborhood</option>
+                <option value="Urban">
+                    Urban
+                </option>
+                <option value="Rural">
+                    Rural
+                </option>
+                <option value="Suburb">
+                    Suburb
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">YearBuilt</label>
+            <input class="form-control" type="number" name="year_built"
+                placeholder="Enter the Year Built" min='0' max='2024' />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your House Price" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
